@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome-pyecharts</title>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+
+</head>
+<body>
+    <div id="e9bc903531344d9abcba4134a51814a6" style="width:900px; height:500px;"></div>
+    <script>
+        var chart_e9bc903531344d9abcba4134a51814a6 = echarts.init(
+            document.getElementById('e9bc903531344d9abcba4134a51814a6'), 'light', {renderer: 'canvas'});
+        var option_e9bc903531344d9abcba4134a51814a6 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "series": [
+        {
+            "type": "bar",
+            "name": "\u5e73\u5747\u85aa\u8d44",
+            "data": [
+                25.14,
+                21.99,
+                23.81,
+                19.46,
+                22.82,
+                16.37,
+                17.49,
+                15.31,
+                11.57,
+                14.13
+            ],
+            "barCategoryGap": "20%",
+            "label": {
+                "show": true,
+                "position": "right",
+                "margin": 8
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u5e73\u5747\u85aa\u8d44"
+            ],
+            "selected": {
+                "\u5e73\u5747\u85aa\u8d44": true
+            },
+            "show": true
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0
+    },
+    "xAxis": [
+        {
+            "name": "\u5e73\u5747\u85aa\u8d44",
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "axisLabel": {
+                "show": true,
+                "position": "top",
+                "margin": 8,
+                "formatter": "{value}k"
+            },
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ],
+    "yAxis": [
+        {
+            "name": "\u57ce\u5e02",
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "\u5317\u4eac",
+                "\u6df1\u5733",
+                "\u4e0a\u6d77",
+                "\u5e7f\u5dde",
+                "\u676d\u5dde",
+                "\u6210\u90fd",
+                "\u5357\u4eac",
+                "\u6b66\u6c49",
+                "\u91cd\u5e86",
+                "\u5929\u6d25"
+            ]
+        }
+    ],
+    "title": [
+        {
+            "text": "\u5404\u5927\u57ce\u5e02python\u76f8\u5173\u804c\u4f4d\u5e73\u5747\u85aa\u8d44\u67f1\u72b6\u56fe"
+        }
+    ],
+    "toolbox": {
+        "show": true,
+        "orient": "horizontal",
+        "itemSize": 15,
+        "itemGap": 10,
+        "left": "80%",
+        "feature": {
+            "saveAsImage": {
+                "show": true,
+                "title": "save as image",
+                "type": "png"
+            },
+            "restore": {
+                "show": true,
+                "title": "restore"
+            },
+            "dataView": {
+                "show": true,
+                "title": "data view",
+                "readOnly": false
+            },
+            "dataZoom": {
+                "show": true,
+                "title": {
+                    "zoom": "data zoom",
+                    "back": "data zoom restore"
+                }
+            }
+        }
+    }
+};
+        chart_e9bc903531344d9abcba4134a51814a6.setOption(option_e9bc903531344d9abcba4134a51814a6);
+    </script>
+</body>
+</html>

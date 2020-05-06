@@ -1,0 +1,490 @@
+2020-03-26 21:23:22 _internal.py [line:122] INFO:  * Running on http://0.0.0.0:7474/ (Press CTRL+C to quit)
+2020-03-26 21:23:33 mongo_pool.py [line:37] INFO: 插入新的代理：{'ip': '60.168.70.130', 'port': '8118', 'protocol': 0, 'nick_type': 0, 'speed': 3.62, 'area': '高匿_安徽省合肥市电信', 'score': 50, 'disuseble_dommains': [], '_id': '60.168.70.130'}
+2020-03-26 21:23:33 mongo_pool.py [line:37] INFO: 插入新的代理：{'ip': '121.237.149.227', 'port': '3000', 'protocol': 2, 'nick_type': 0, 'speed': 0.76, 'area': '江苏南京', 'score': 50, 'disuseble_dommains': [], '_id': '121.237.149.227'}
+2020-03-26 21:24:00 mongo_pool.py [line:46] INFO: 更新代理ip：{'ip': '202.104.113.32', 'port': '53281', 'protocol': -1, 'nick_type': -1, 'speed': -1, 'area': None, 'score': 41, 'disuseble_dommains': []}
+2020-03-26 21:24:23 run_spider.py [line:64] ERROR: HTTPConnectionPool(host='www.iphai.com', port=80): Read timed out. (read timeout=30)
+Traceback (most recent call last):
+  File "G:\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "G:\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "G:\anaconda3\lib\http\client.py", line 1321, in getresponse
+    response.begin()
+  File "G:\anaconda3\lib\http\client.py", line 296, in begin
+    version, status, reason = self._read_status()
+  File "G:\anaconda3\lib\http\client.py", line 257, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "G:\anaconda3\lib\socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+  File "G:\anaconda3\lib\site-packages\gevent\_socket3.py", line 433, in recv_into
+    self._wait(self._read_event)
+  File "src/gevent/_hub_primitives.py", line 284, in gevent.__hub_primitives.wait_on_socket
+  File "src/gevent/_hub_primitives.py", line 289, in gevent.__hub_primitives.wait_on_socket
+  File "src/gevent/_hub_primitives.py", line 280, in gevent.__hub_primitives._primitive_wait
+  File "src/gevent/_hub_primitives.py", line 281, in gevent.__hub_primitives._primitive_wait
+  File "src/gevent/_hub_primitives.py", line 46, in gevent.__hub_primitives.WaitOperationsGreenlet.wait
+  File "src/gevent/_hub_primitives.py", line 46, in gevent.__hub_primitives.WaitOperationsGreenlet.wait
+  File "src/gevent/_hub_primitives.py", line 55, in gevent.__hub_primitives.WaitOperationsGreenlet.wait
+  File "src/gevent/_waiter.py", line 151, in gevent.__waiter.Waiter.get
+  File "src/gevent/_greenlet_primitives.py", line 60, in gevent.__greenlet_primitives.SwitchOutGreenletWithLoop.switch
+  File "src/gevent/_greenlet_primitives.py", line 60, in gevent.__greenlet_primitives.SwitchOutGreenletWithLoop.switch
+  File "src/gevent/_greenlet_primitives.py", line 64, in gevent.__greenlet_primitives.SwitchOutGreenletWithLoop.switch
+  File "src/gevent/__greenlet_primitives.pxd", line 35, in gevent.__greenlet_primitives._greenlet_switch
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "G:\anaconda3\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "G:\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "G:\anaconda3\lib\site-packages\urllib3\util\retry.py", line 368, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "G:\anaconda3\lib\site-packages\urllib3\packages\six.py", line 686, in reraise
+    raise value
+  File "G:\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "G:\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "G:\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+urllib3.exceptions.ReadTimeoutError: HTTPConnectionPool(host='www.iphai.com', port=80): Read timed out. (read timeout=30)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonPractice\IpProxyPool\proxy_spider\run_spider.py", line 55, in __run_one_spider
+    for proxy in spider.get_proxies():
+  File "E:\PythonPractice\IpProxyPool\proxy_spider\proxy_spiders.py", line 99, in get_proxies
+    for item in proxies:
+  File "E:\PythonPractice\IpProxyPool\proxy_spider\base_spider.py", line 39, in get_proxies
+    page_html = self.get_page(url)
+  File "E:\PythonPractice\IpProxyPool\proxy_spider\base_spider.py", line 56, in get_page
+    res = requests.get(url, headers=get_request_headers(),timeout=TIMEOUT)
+  File "G:\anaconda3\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "G:\anaconda3\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "G:\anaconda3\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "G:\anaconda3\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "G:\anaconda3\lib\site-packages\requests\adapters.py", line 529, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPConnectionPool(host='www.iphai.com', port=80): Read timed out. (read timeout=30)
+2020-03-26 21:24:24 run_spider.py [line:65] ERROR: 爬虫<proxy_spider.proxy_spiders.IphaiSpider object at 0x0000000005436A90> 出现错误
+Traceback (most recent call last):
+  File "G:\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "G:\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "G:\anaconda3\lib\http\client.py", line 1321, in getresponse
+    response.begin()
+  File "G:\anaconda3\lib\http\client.py", line 296, in begin
+    version, status, reason = self._read_status()
+  File "G:\anaconda3\lib\http\client.py", line 257, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "G:\anaconda3\lib\socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+  File "G:\anaconda3\lib\site-packages\gevent\_socket3.py", line 433, in recv_into
+    self._wait(self._read_event)
+  File "src/gevent/_hub_primitives.py", line 284, in gevent.__hub_primitives.wait_on_socket
+  File "src/gevent/_hub_primitives.py", line 289, in gevent.__hub_primitives.wait_on_socket
+  File "src/gevent/_hub_primitives.py", line 280, in gevent.__hub_primitives._primitive_wait
+  File "src/gevent/_hub_primitives.py", line 281, in gevent.__hub_primitives._primitive_wait
+  File "src/gevent/_hub_primitives.py", line 46, in gevent.__hub_primitives.WaitOperationsGreenlet.wait
+  File "src/gevent/_hub_primitives.py", line 46, in gevent.__hub_primitives.WaitOperationsGreenlet.wait
+  File "src/gevent/_hub_primitives.py", line 55, in gevent.__hub_primitives.WaitOperationsGreenlet.wait
+  File "src/gevent/_waiter.py", line 151, in gevent.__waiter.Waiter.get
+  File "src/gevent/_greenlet_primitives.py", line 60, in gevent.__greenlet_primitives.SwitchOutGreenletWithLoop.switch
+  File "src/gevent/_greenlet_primitives.py", line 60, in gevent.__greenlet_primitives.SwitchOutGreenletWithLoop.switch
+  File "src/gevent/_greenlet_primitives.py", line 64, in gevent.__greenlet_primitives.SwitchOutGreenletWithLoop.switch
+  File "src/gevent/__greenlet_primitives.pxd", line 35, in gevent.__greenlet_primitives._greenlet_switch
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "G:\anaconda3\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "G:\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "G:\anaconda3\lib\site-packages\urllib3\util\retry.py", line 368, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "G:\anaconda3\lib\site-packages\urllib3\packages\six.py", line 686, in reraise
+    raise value
+  File "G:\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "G:\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "G:\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+urllib3.exceptions.ReadTimeoutError: HTTPConnectionPool(host='www.iphai.com', port=80): Read timed out. (read timeout=30)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonPractice\IpProxyPool\proxy_spider\run_spider.py", line 55, in __run_one_spider
+    for proxy in spider.get_proxies():
+  File "E:\PythonPractice\IpProxyPool\proxy_spider\proxy_spiders.py", line 99, in get_proxies
+    for item in proxies:
+  File "E:\PythonPractice\IpProxyPool\proxy_spider\base_spider.py", line 39, in get_proxies
+    page_html = self.get_page(url)
+  File "E:\PythonPractice\IpProxyPool\proxy_spider\base_spider.py", line 56, in get_page
+    res = requests.get(url, headers=get_request_headers(),timeout=TIMEOUT)
+  File "G:\anaconda3\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "G:\anaconda3\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "G:\anaconda3\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "G:\anaconda3\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "G:\anaconda3\lib\site-packages\requests\adapters.py", line 529, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPConnectionPool(host='www.iphai.com', port=80): Read timed out. (read timeout=30)
+2020-03-26 21:24:25 mongo_pool.py [line:37] INFO: 插入新的代理：{'ip': '222.95.144.170', 'port': '3000', 'protocol': 2, 'nick_type': 0, 'speed': 2.41, 'area': '江苏南京', 'score': 50, 'disuseble_dommains': [], '_id': '222.95.144.170'}
+2020-03-26 21:24:36 run_spider.py [line:61] INFO: 爬虫<proxy_spider.proxy_spiders.Free89ipSpider object at 0x0000000005436A20>爬取并校验0个ip完毕
+2020-03-26 21:24:41 mongo_pool.py [line:37] INFO: 插入新的代理：{'ip': '121.40.66.129', 'port': '808', 'protocol': 0, 'nick_type': 0, 'speed': 6.57, 'area': '中国 浙江 杭州', 'score': 50, 'disuseble_dommains': [], '_id': '121.40.66.129'}
+2020-03-26 21:24:50 mongo_pool.py [line:37] INFO: 插入新的代理：{'ip': '113.87.90.136', 'port': '53281', 'protocol': 1, 'nick_type': 0, 'speed': 4.73, 'area': '广东深圳', 'score': 50, 'disuseble_dommains': [], '_id': '113.87.90.136'}
+2020-03-26 21:24:50 mongo_pool.py [line:37] INFO: 插入新的代理：{'ip': '117.85.166.36', 'port': '8118', 'protocol': 0, 'nick_type': 0, 'speed': 0.65, 'area': '', 'score': 50, 'disuseble_dommains': [], '_id': '117.85.166.36'}
+2020-03-26 21:25:22 mongo_pool.py [line:37] INFO: 插入新的代理：{'ip': '121.237.149.158', 'port': '3000', 'protocol': 2, 'nick_type': 0, 'speed': 0.51, 'area': '江苏南京', 'score': 50, 'disuseble_dommains': [], '_id': '121.237.149.158'}
+2020-03-26 21:25:28 mongo_pool.py [line:37] INFO: 插入新的代理：{'ip': '47.98.188.186', 'port': '8080', 'protocol': 1, 'nick_type': 0, 'speed': 21.66, 'area': '高匿_浙江省杭州市阿里云', 'score': 50, 'disuseble_dommains': [], '_id': '47.98.188.186'}
+2020-03-26 21:26:40 mongo_pool.py [line:37] INFO: 插入新的代理：{'ip': '110.73.9.43', 'port': '8123', 'protocol': 1, 'nick_type': 0, 'speed': 17.96, 'area': '广西防城港', 'score': 50, 'disuseble_dommains': [], '_id': '110.73.9.43'}
+2020-03-26 21:27:02 mongo_pool.py [line:37] INFO: 插入新的代理：{'ip': '114.99.54.65', 'port': '8118', 'protocol': 0, 'nick_type': 0, 'speed': 1.51, 'area': '安徽安庆', 'score': 50, 'disuseble_dommains': [], '_id': '114.99.54.65'}
+2020-03-26 21:27:18 mongo_pool.py [line:37] INFO: 插入新的代理：{'ip': '47.244.109.197', 'port': '3128', 'protocol': 0, 'nick_type': 0, 'speed': 3.12, 'area': 'SSL高匿_香港阿里云', 'score': 50, 'disuseble_dommains': [], '_id': '47.244.109.197'}
+2020-03-26 21:29:36 mongo_pool.py [line:37] INFO: 插入新的代理：{'ip': '159.138.22.170', 'port': '3128', 'protocol': 2, 'nick_type': 2, 'speed': 0.28, 'area': '香港', 'score': 50, 'disuseble_dommains': [], '_id': '159.138.22.170'}
+2020-03-26 21:29:53 mongo_pool.py [line:37] INFO: 插入新的代理：{'ip': '60.205.132.71', 'port': '80', 'protocol': 0, 'nick_type': 0, 'speed': 3.68, 'area': '', 'score': 50, 'disuseble_dommains': [], '_id': '60.205.132.71'}
+2020-03-26 21:30:02 mongo_pool.py [line:37] INFO: 插入新的代理：{'ip': '171.35.160.55', 'port': '9999', 'protocol': 2, 'nick_type': 0, 'speed': 0.45, 'area': '', 'score': 50, 'disuseble_dommains': [], '_id': '171.35.160.55'}
+2020-03-26 21:30:21 mongo_pool.py [line:37] INFO: 插入新的代理：{'ip': '80.211.136.190', 'port': '3128', 'protocol': 0, 'nick_type': 2, 'speed': 1.61, 'area': '高匿_丹麦', 'score': 50, 'disuseble_dommains': [], '_id': '80.211.136.190'}
+2020-03-26 21:37:58 mongo_pool.py [line:37] INFO: 插入新的代理：{'ip': '113.65.10.226', 'port': '8000', 'protocol': 0, 'nick_type': 0, 'speed': 10.33, 'area': '广东广州', 'score': 50, 'disuseble_dommains': [], '_id': '113.65.10.226'}
+2020-03-26 21:42:50 mongo_pool.py [line:37] INFO: 插入新的代理：{'ip': '121.40.141.226', 'port': '31280', 'protocol': 0, 'nick_type': 2, 'speed': 8.13, 'area': '中国 浙江 杭州', 'score': 50, 'disuseble_dommains': [], '_id': '121.40.141.226'}
+2020-03-26 21:46:23 mongo_pool.py [line:37] INFO: 插入新的代理：{'ip': '125.94.44.129', 'port': '1080', 'protocol': 2, 'nick_type': 0, 'speed': 29.0, 'area': '中国 广东 广州', 'score': 50, 'disuseble_dommains': [], '_id': '125.94.44.129'}
+2020-03-26 21:50:49 mongo_pool.py [line:39] WARNING: 已经存在的代理{'ip': '118.89.150.177', 'port': '1080', 'protocol': 0, 'nick_type': 0, 'speed': 18.45, 'area': '中国 上海 上海', 'score': 50, 'disuseble_dommains': []}
+2020-03-26 21:51:06 mongo_pool.py [line:37] INFO: 插入新的代理：{'ip': '39.137.107.98', 'port': '80', 'protocol': 0, 'nick_type': 0, 'speed': 10.52, 'area': '中国 四川 眉山', 'score': 50, 'disuseble_dommains': [], '_id': '39.137.107.98'}
+2020-03-26 21:59:38 mongo_pool.py [line:37] INFO: 插入新的代理：{'ip': '118.181.226.166', 'port': '44640', 'protocol': 1, 'nick_type': 0, 'speed': 18.18, 'area': '甘肃兰州', 'score': 50, 'disuseble_dommains': [], '_id': '118.181.226.166'}
+2020-03-26 22:00:27 run_spider.py [line:64] ERROR: HTTPConnectionPool(host='www.qydaili.com', port=80): Max retries exceeded with url: /free/?page=8 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000000057C65C0>: Failed to establish a new connection: [Errno 11004] getaddrinfo failed'))
+Traceback (most recent call last):
+  File "G:\anaconda3\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "G:\anaconda3\lib\site-packages\urllib3\util\connection.py", line 57, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "G:\anaconda3\lib\site-packages\gevent\_socketcommon.py", line 212, in getaddrinfo
+    addrlist = get_hub().resolver.getaddrinfo(host, port, family, type, proto, flags)
+  File "G:\anaconda3\lib\site-packages\gevent\resolver\thread.py", line 65, in getaddrinfo
+    return self.pool.apply(_socket.getaddrinfo, args, kwargs)
+  File "G:\anaconda3\lib\site-packages\gevent\pool.py", line 159, in apply
+    return self.spawn(func, *args, **kwds).get()
+  File "src/gevent/event.py", line 268, in gevent._event.AsyncResult.get
+  File "src/gevent/event.py", line 296, in gevent._event.AsyncResult.get
+  File "src/gevent/event.py", line 286, in gevent._event.AsyncResult.get
+  File "src/gevent/event.py", line 266, in gevent._event.AsyncResult._raise_exception
+  File "G:\anaconda3\lib\site-packages\gevent\_compat.py", line 47, in reraise
+    raise value.with_traceback(tb)
+  File "G:\anaconda3\lib\site-packages\gevent\threadpool.py", line 281, in _worker
+    value = func(*args, **kwargs)
+socket.gaierror: [Errno 11004] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "G:\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "G:\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "G:\anaconda3\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "G:\anaconda3\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "G:\anaconda3\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "G:\anaconda3\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "G:\anaconda3\lib\http\client.py", line 956, in send
+    self.connect()
+  File "G:\anaconda3\lib\site-packages\urllib3\connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "G:\anaconda3\lib\site-packages\urllib3\connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000000057C65C0>: Failed to establish a new connection: [Errno 11004] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "G:\anaconda3\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "G:\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "G:\anaconda3\lib\site-packages\urllib3\util\retry.py", line 399, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='www.qydaili.com', port=80): Max retries exceeded with url: /free/?page=8 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000000057C65C0>: Failed to establish a new connection: [Errno 11004] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonPractice\IpProxyPool\proxy_spider\run_spider.py", line 55, in __run_one_spider
+    for proxy in spider.get_proxies():
+  File "E:\PythonPractice\IpProxyPool\proxy_spider\base_spider.py", line 39, in get_proxies
+    page_html = self.get_page(url)
+  File "E:\PythonPractice\IpProxyPool\proxy_spider\proxy_spiders.py", line 133, in get_page
+    content = super().get_page(url)
+  File "E:\PythonPractice\IpProxyPool\proxy_spider\base_spider.py", line 49, in get_page
+    res =requests.get(url,headers = get_request_headers(),timeout=TIMEOUT)
+  File "G:\anaconda3\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "G:\anaconda3\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "G:\anaconda3\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "G:\anaconda3\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "G:\anaconda3\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='www.qydaili.com', port=80): Max retries exceeded with url: /free/?page=8 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000000057C65C0>: Failed to establish a new connection: [Errno 11004] getaddrinfo failed'))
+2020-03-26 22:00:27 run_spider.py [line:65] ERROR: 爬虫<proxy_spider.proxy_spiders.QiYunSpider object at 0x0000000005436BE0> 出现错误
+Traceback (most recent call last):
+  File "G:\anaconda3\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "G:\anaconda3\lib\site-packages\urllib3\util\connection.py", line 57, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "G:\anaconda3\lib\site-packages\gevent\_socketcommon.py", line 212, in getaddrinfo
+    addrlist = get_hub().resolver.getaddrinfo(host, port, family, type, proto, flags)
+  File "G:\anaconda3\lib\site-packages\gevent\resolver\thread.py", line 65, in getaddrinfo
+    return self.pool.apply(_socket.getaddrinfo, args, kwargs)
+  File "G:\anaconda3\lib\site-packages\gevent\pool.py", line 159, in apply
+    return self.spawn(func, *args, **kwds).get()
+  File "src/gevent/event.py", line 268, in gevent._event.AsyncResult.get
+  File "src/gevent/event.py", line 296, in gevent._event.AsyncResult.get
+  File "src/gevent/event.py", line 286, in gevent._event.AsyncResult.get
+  File "src/gevent/event.py", line 266, in gevent._event.AsyncResult._raise_exception
+  File "G:\anaconda3\lib\site-packages\gevent\_compat.py", line 47, in reraise
+    raise value.with_traceback(tb)
+  File "G:\anaconda3\lib\site-packages\gevent\threadpool.py", line 281, in _worker
+    value = func(*args, **kwargs)
+socket.gaierror: [Errno 11004] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "G:\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "G:\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "G:\anaconda3\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "G:\anaconda3\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "G:\anaconda3\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "G:\anaconda3\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "G:\anaconda3\lib\http\client.py", line 956, in send
+    self.connect()
+  File "G:\anaconda3\lib\site-packages\urllib3\connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "G:\anaconda3\lib\site-packages\urllib3\connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000000057C65C0>: Failed to establish a new connection: [Errno 11004] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "G:\anaconda3\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "G:\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "G:\anaconda3\lib\site-packages\urllib3\util\retry.py", line 399, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='www.qydaili.com', port=80): Max retries exceeded with url: /free/?page=8 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000000057C65C0>: Failed to establish a new connection: [Errno 11004] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonPractice\IpProxyPool\proxy_spider\run_spider.py", line 55, in __run_one_spider
+    for proxy in spider.get_proxies():
+  File "E:\PythonPractice\IpProxyPool\proxy_spider\base_spider.py", line 39, in get_proxies
+    page_html = self.get_page(url)
+  File "E:\PythonPractice\IpProxyPool\proxy_spider\proxy_spiders.py", line 133, in get_page
+    content = super().get_page(url)
+  File "E:\PythonPractice\IpProxyPool\proxy_spider\base_spider.py", line 49, in get_page
+    res =requests.get(url,headers = get_request_headers(),timeout=TIMEOUT)
+  File "G:\anaconda3\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "G:\anaconda3\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "G:\anaconda3\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "G:\anaconda3\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "G:\anaconda3\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='www.qydaili.com', port=80): Max retries exceeded with url: /free/?page=8 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000000057C65C0>: Failed to establish a new connection: [Errno 11004] getaddrinfo failed'))
+2020-03-26 22:03:38 run_spider.py [line:64] ERROR: HTTPConnectionPool(host='www.ip3366.net', port=80): Max retries exceeded with url: /free/?stype=1&page=6 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000000003DDAB00>: Failed to establish a new connection: [Errno 11004] getaddrinfo failed'))
+Traceback (most recent call last):
+  File "G:\anaconda3\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "G:\anaconda3\lib\site-packages\urllib3\util\connection.py", line 57, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "G:\anaconda3\lib\site-packages\gevent\_socketcommon.py", line 212, in getaddrinfo
+    addrlist = get_hub().resolver.getaddrinfo(host, port, family, type, proto, flags)
+  File "G:\anaconda3\lib\site-packages\gevent\resolver\thread.py", line 65, in getaddrinfo
+    return self.pool.apply(_socket.getaddrinfo, args, kwargs)
+  File "G:\anaconda3\lib\site-packages\gevent\pool.py", line 159, in apply
+    return self.spawn(func, *args, **kwds).get()
+  File "src/gevent/event.py", line 268, in gevent._event.AsyncResult.get
+  File "src/gevent/event.py", line 296, in gevent._event.AsyncResult.get
+  File "src/gevent/event.py", line 286, in gevent._event.AsyncResult.get
+  File "src/gevent/event.py", line 266, in gevent._event.AsyncResult._raise_exception
+  File "G:\anaconda3\lib\site-packages\gevent\_compat.py", line 47, in reraise
+    raise value.with_traceback(tb)
+  File "G:\anaconda3\lib\site-packages\gevent\threadpool.py", line 281, in _worker
+    value = func(*args, **kwargs)
+socket.gaierror: [Errno 11004] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "G:\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "G:\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "G:\anaconda3\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "G:\anaconda3\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "G:\anaconda3\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "G:\anaconda3\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "G:\anaconda3\lib\http\client.py", line 956, in send
+    self.connect()
+  File "G:\anaconda3\lib\site-packages\urllib3\connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "G:\anaconda3\lib\site-packages\urllib3\connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000000003DDAB00>: Failed to establish a new connection: [Errno 11004] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "G:\anaconda3\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "G:\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "G:\anaconda3\lib\site-packages\urllib3\util\retry.py", line 399, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='www.ip3366.net', port=80): Max retries exceeded with url: /free/?stype=1&page=6 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000000003DDAB00>: Failed to establish a new connection: [Errno 11004] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonPractice\IpProxyPool\proxy_spider\run_spider.py", line 55, in __run_one_spider
+    for proxy in spider.get_proxies():
+  File "E:\PythonPractice\IpProxyPool\proxy_spider\base_spider.py", line 39, in get_proxies
+    page_html = self.get_page(url)
+  File "E:\PythonPractice\IpProxyPool\proxy_spider\base_spider.py", line 49, in get_page
+    res =requests.get(url,headers = get_request_headers(),timeout=TIMEOUT)
+  File "G:\anaconda3\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "G:\anaconda3\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "G:\anaconda3\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "G:\anaconda3\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "G:\anaconda3\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='www.ip3366.net', port=80): Max retries exceeded with url: /free/?stype=1&page=6 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000000003DDAB00>: Failed to establish a new connection: [Errno 11004] getaddrinfo failed'))
+2020-03-26 22:03:38 run_spider.py [line:65] ERROR: 爬虫<proxy_spider.proxy_spiders.Ip3366Spider object at 0x000000000541CD68> 出现错误
+Traceback (most recent call last):
+  File "G:\anaconda3\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "G:\anaconda3\lib\site-packages\urllib3\util\connection.py", line 57, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "G:\anaconda3\lib\site-packages\gevent\_socketcommon.py", line 212, in getaddrinfo
+    addrlist = get_hub().resolver.getaddrinfo(host, port, family, type, proto, flags)
+  File "G:\anaconda3\lib\site-packages\gevent\resolver\thread.py", line 65, in getaddrinfo
+    return self.pool.apply(_socket.getaddrinfo, args, kwargs)
+  File "G:\anaconda3\lib\site-packages\gevent\pool.py", line 159, in apply
+    return self.spawn(func, *args, **kwds).get()
+  File "src/gevent/event.py", line 268, in gevent._event.AsyncResult.get
+  File "src/gevent/event.py", line 296, in gevent._event.AsyncResult.get
+  File "src/gevent/event.py", line 286, in gevent._event.AsyncResult.get
+  File "src/gevent/event.py", line 266, in gevent._event.AsyncResult._raise_exception
+  File "G:\anaconda3\lib\site-packages\gevent\_compat.py", line 47, in reraise
+    raise value.with_traceback(tb)
+  File "G:\anaconda3\lib\site-packages\gevent\threadpool.py", line 281, in _worker
+    value = func(*args, **kwargs)
+socket.gaierror: [Errno 11004] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "G:\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "G:\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "G:\anaconda3\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "G:\anaconda3\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "G:\anaconda3\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "G:\anaconda3\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "G:\anaconda3\lib\http\client.py", line 956, in send
+    self.connect()
+  File "G:\anaconda3\lib\site-packages\urllib3\connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "G:\anaconda3\lib\site-packages\urllib3\connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000000003DDAB00>: Failed to establish a new connection: [Errno 11004] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "G:\anaconda3\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "G:\anaconda3\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "G:\anaconda3\lib\site-packages\urllib3\util\retry.py", line 399, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='www.ip3366.net', port=80): Max retries exceeded with url: /free/?stype=1&page=6 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000000003DDAB00>: Failed to establish a new connection: [Errno 11004] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\PythonPractice\IpProxyPool\proxy_spider\run_spider.py", line 55, in __run_one_spider
+    for proxy in spider.get_proxies():
+  File "E:\PythonPractice\IpProxyPool\proxy_spider\base_spider.py", line 39, in get_proxies
+    page_html = self.get_page(url)
+  File "E:\PythonPractice\IpProxyPool\proxy_spider\base_spider.py", line 49, in get_page
+    res =requests.get(url,headers = get_request_headers(),timeout=TIMEOUT)
+  File "G:\anaconda3\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "G:\anaconda3\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "G:\anaconda3\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "G:\anaconda3\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "G:\anaconda3\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='www.ip3366.net', port=80): Max retries exceeded with url: /free/?stype=1&page=6 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000000003DDAB00>: Failed to establish a new connection: [Errno 11004] getaddrinfo failed'))
+2020-03-26 22:03:49 mongo_pool.py [line:37] INFO: 插入新的代理：{'ip': '118.114.165.98', 'port': '8118', 'protocol': 0, 'nick_type': 0, 'speed': 0.67, 'area': '四川成都', 'score': 50, 'disuseble_dommains': [], '_id': '118.114.165.98'}
+2020-03-26 22:14:13 mongo_pool.py [line:37] INFO: 插入新的代理：{'ip': '121.33.220.158', 'port': '808', 'protocol': 0, 'nick_type': 2, 'speed': 6.38, 'area': '广东广州', 'score': 50, 'disuseble_dommains': [], '_id': '121.33.220.158'}
+2020-03-26 22:14:15 mongo_pool.py [line:37] INFO: 插入新的代理：{'ip': '120.234.138.102', 'port': '53779', 'protocol': 0, 'nick_type': 0, 'speed': 4.19, 'area': '', 'score': 50, 'disuseble_dommains': [], '_id': '120.234.138.102'}
+2020-03-26 22:22:44 mongo_pool.py [line:37] INFO: 插入新的代理：{'ip': '121.237.148.87', 'port': '3000', 'protocol': 2, 'nick_type': 0, 'speed': 1.78, 'area': '江苏南京', 'score': 50, 'disuseble_dommains': [], '_id': '121.237.148.87'}
+2020-03-26 22:39:48 mongo_pool.py [line:39] WARNING: 已经存在的代理{'ip': '218.22.7.62', 'port': '53281', 'protocol': 1, 'nick_type': 0, 'speed': 14.53, 'area': '', 'score': 50, 'disuseble_dommains': []}
+2020-03-26 22:40:46 mongo_pool.py [line:39] WARNING: 已经存在的代理{'ip': '125.46.0.62', 'port': '53281', 'protocol': 2, 'nick_type': 2, 'speed': 5.12, 'area': '', 'score': 50, 'disuseble_dommains': []}
+2020-03-26 22:41:54 mongo_pool.py [line:37] INFO: 插入新的代理：{'ip': '58.247.127.145', 'port': '53281', 'protocol': 0, 'nick_type': 2, 'speed': 8.18, 'area': '', 'score': 50, 'disuseble_dommains': [], '_id': '58.247.127.145'}
+2020-03-26 22:46:30 mongo_pool.py [line:39] WARNING: 已经存在的代理{'ip': '125.46.0.62', 'port': '53281', 'protocol': 0, 'nick_type': 2, 'speed': 15.55, 'area': '', 'score': 50, 'disuseble_dommains': []}
+2020-03-26 22:47:07 mongo_pool.py [line:37] INFO: 插入新的代理：{'ip': '182.18.13.149', 'port': '53281', 'protocol': 0, 'nick_type': 2, 'speed': 12.75, 'area': '', 'score': 50, 'disuseble_dommains': [], '_id': '182.18.13.149'}
+2020-03-26 22:48:57 mongo_pool.py [line:39] WARNING: 已经存在的代理{'ip': '221.229.252.98', 'port': '9797', 'protocol': 0, 'nick_type': 2, 'speed': 9.85, 'area': '', 'score': 50, 'disuseble_dommains': []}
+2020-03-26 22:52:13 mongo_pool.py [line:39] WARNING: 已经存在的代理{'ip': '182.18.13.149', 'port': '53281', 'protocol': 0, 'nick_type': 2, 'speed': 9.76, 'area': '', 'score': 50, 'disuseble_dommains': []}
+2020-03-26 22:53:34 mongo_pool.py [line:37] INFO: 插入新的代理：{'ip': '27.191.234.69', 'port': '9999', 'protocol': 1, 'nick_type': 0, 'speed': 20.97, 'area': '', 'score': 50, 'disuseble_dommains': [], '_id': '27.191.234.69'}
+2020-03-26 22:55:45 mongo_pool.py [line:39] WARNING: 已经存在的代理{'ip': '27.191.234.69', 'port': '9999', 'protocol': 2, 'nick_type': 2, 'speed': 3.47, 'area': '', 'score': 50, 'disuseble_dommains': []}
+2020-03-26 22:56:23 mongo_pool.py [line:39] WARNING: 已经存在的代理{'ip': '27.191.234.69', 'port': '9999', 'protocol': 0, 'nick_type': 2, 'speed': 9.47, 'area': '', 'score': 50, 'disuseble_dommains': []}
